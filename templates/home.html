@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Next-gen Museums
+{% endblock title %}
+
+{% block content %}
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="active item" href="{% url 'home' %}">Home</a>
+            <a class="item" href="{% url 'museums' %}">Exhibits</a>
+            <a class="item">Us</a>
+            <div class="right menu">
+            </div>
+        </div>
+    </div>
+  
+    <div class="ui vertical sidebar menu left">
+        <a class="active item" href="{% url 'home' %}">Home</a>
+        <a class="item" href="{% url 'museums' %}">Exhibits</a>
+        <a class="item">Us</a>
+    </div>
+
+    <div class="pusher">
+        <div class="ui vertical masthead center aligned segment">
+            <div class="ui container">
+                <div class="ui large secondary inverted pointing menu">
+                    <a class="toc item">
+                    <i class="sidebar icon"></i>
+                    </a>
+                    <a class="active item" href="{% url 'home' %}">Home</a>
+                    <a class="item" href="{% url 'museums' %}">Exhibits</a>
+                    <a class="item">Us</a>
+            </div>
+        </div>
+        <div class="ui text container">
+            <video autoplay muted loop id="bg-vid">
+                <source src="{% static 'video.mp4' %}" type="video/mp4">
+            </video>
+            <h1 class="ui inverted header">
+                Next-gen Museums
+            </h1>
+            <h2 class="ui inverted header">Scrape better, learn better</h2>
+            <a class="ui inverted basic button" style="margin-top: 20px;" href="#about">About this project <i class="right arrow icon"></i></a>
+        </div>
+    </div>
+  
+    <div class="ui vertical stripe segment" id="about">
+        <div class="ui middle aligned stackable grid container">
+        <div class="row">
+            <div class="eight wide column">
+            <h3 class="ui header">We Make Discovering Exhibits Much Easier</h3>
+            <p>Using hologram technology it is way easier to discover exhibits all around the world. We love to learn new stuff about the world, its history and its culture. We want others to be interested in these fields too!</p>
+            <h3 class="ui header">Easier Access To the Information?</h3>
+            <p>Yes that's right, with our project you can access more information about an exhibit with just scanning the QR code.</p>
+            </div>
+            <div class="six wide right floated column">
+            <img src="{% static 'museum.jpg' %}" class="ui large bordered rounded image">
+            </div>
+        </div>
+        </div>
+    </div>
+  
+  
+    <div class="ui vertical stripe quote segment">
+        <div class="ui equal width stackable internally celled grid">
+        <div class="center aligned row">
+            <div class="column">
+            <h3>"What a Company"</h3>
+            <p>That is what they all say about us</p>
+            </div>
+            <div class="column">
+            <h3>"We'll make it easier to wonder."</h3>
+            <p>
+                <img src="{% static 'ahmed.jpg' %}" class="ui avatar image"> <b>Ahmed</b> A Simple Coder
+            </p>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+    <div class="ui vertical stripe segment">
+        <div class="ui text container">
+        <h3 class="ui header">Who Are Whe?</h3>
+        <p>Ahmed, Eyyub, Rufat, Ashurbay. From different schools and grades. But the will to make museums more trending than ever united them. They're the team EncaTech. Their hope of this project being evolved gave them a great motivation.</p>
+        <a class="ui large button">See Their Images</a>
+        <h4 class="ui horizontal header divider">
+            <a href="#">What Is The Research?</a>
+        </h4>
+        <h3 class="ui header">We Discussed the Project With the Top Museums</h3>
+        <p>Our discussions resulted in a very nice way. Our project is a need for museums to be much more modern and trending. We are uniting the classical aura of museums and the technological reality of today.</p>
+        </div>
+    </div>
+  
+    <div class="ui inverted vertical footer segment">
+        <div class="ui container">
+        <div class="ui stackable inverted divided equal height stackable grid">
+            <div class="three wide column">
+            <h4 class="ui inverted header">About</h4>
+            <div class="ui inverted link list">
+                <a href="#" class="item">Sitemap</a>
+                <a href="#" class="item">Contact Us</a>
+                <a href="#" class="item">Religious Ceremonies</a>
+                <a href="#" class="item">Gazebo Plans</a>
+            </div>
+            </div>
+            <div class="three wide column">
+            <h4 class="ui inverted header">Services</h4>
+            <div class="ui inverted link list">
+                <a href="#" class="item">Banana Pre-Order</a>
+                <a href="#" class="item">DNA FAQ</a>
+                <a href="#" class="item">How To Access</a>
+                <a href="#" class="item">Favorite X-Men</a>
+            </div>
+            </div>
+            <div class="seven wide column">
+            <h4 class="ui inverted header">Footer Header</h4>
+            <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

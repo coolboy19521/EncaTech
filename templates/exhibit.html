@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Exhibit
+{% endblock title %}
+
+{% block content %}
+    <style>
+        body, html {
+            background-color: white!important;
+        }
+
+        audio::-webkit-media-controls-enclosure, video::-webkit-media-controls-enclosure {
+            max-width: 100%;
+          }
+    </style>
+
+    <div class="ui large top fixed hidden menu">
+        <div class="ui container">
+            <a class="active item" href="{% url 'home' %}">Home</a>
+            <a class="item" href="{% url 'museums' %}">Exhibits</a>
+            <a class="item">Us</a>
+            <div class="right menu">
+            </div>
+        </div>
+    </div>
+  
+    <div class="ui vertical sidebar menu left">
+        <a class="active item" href="{% url 'home' %}">Home</a>
+        <a class="item" href="{% url 'museums' %}">Exhibits</a>
+        <a class="item">Us</a>
+    </div>
+
+    <div class="pusher">
+        <div class="ui vertical masthead center aligned segment">
+            <div class="ui container">
+                <div class="ui large secondary pointing menu">
+                    <a class="toc item">
+                    <i class="sidebar icon"></i>
+                    </a>
+                    <a class="active item" href="{% url 'home' %}">Home</a>
+                    <a class="item" href="{% url 'museums' %}">Exhibits</a>
+                    <a class="item">Us</a>
+            </div>
+        </div>
+        <div class="ui container" style="margin-top: 30px;">
+            <video width="100%" height="100%" controls>
+                <source src="../{{ exhibit.video }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <br>
+            <audio controls>
+                <source src="../{{ exhibit.audio }}" type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+            <br>
+            <div class="ui justified text container" style="margin-top: 20px;">
+                <button class="ui icon button" onclick="inc()">
+                    <i class="plus icon"></i>
+                </button>
+                <button class="ui icon button" onclick="dec()" style="margin-bottom: 20px;">
+                    <i class="minus icon"></i>
+                </button>
+                <p id="content">{{ exhibit.desc }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let inc = () => {
+            newFontSize= parseInt($('#content').css('font-size')) + 2;
+            $('#content').css('font-size', newFontSize);
+        }
+        let dec = () => {
+            newFontSize= parseInt($('#content').css('font-size')) - 2;
+            $('#content').css('font-size', newFontSize);
+        }
+    </script>
+{% endblock content %}
